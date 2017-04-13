@@ -5,4 +5,4 @@ This is the initial release. The way versions are numbered is the "v4" at beginn
 <h3>Changelog:</h3>
 -Initial release<br/>
 -Has URL bar modifiers (php-like), ex: ".../programmables.html?background=white;size=8:12;gravity=false"<br/>
-<br/><br/><h2><a href="http://iphoneguy1101.github.io/Programmables/programmables.html">Click here to launch</a></h2>
+<br/><br/><h2><a href="http://iphoneguy1101.github.io/Programmables/programmables.html?">Click here to launch</a></h2>Remove the question mark at the end of the URL for options, it is there so you always get latest config.
