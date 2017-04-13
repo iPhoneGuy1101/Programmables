@@ -5,3 +5,4 @@ This is the initial release. The way versions are numbered is the "v4" at beginn
 <h3>Changelog:</h3>
 -Initial release<br/>
 -Has URL bar modifiers (php-like), ex: ".../programmables.html?background=white;size=8:12;gravity=false"<br/>
+<br/><br/><h2><a href="/Programmables/programmables.html">Click here to launch</a></h2>
