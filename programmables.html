@@ -71,10 +71,10 @@
         }
       };
 
+      var md = false;
       var shapes = [];
       var canvas, ctx;
       var frames = 0, fps = 0, then = 0, now = 1000;
-
       function Shape(type, x, y, velX, velY){
         var r = Math.round(Math.random()*255);
         var g = Math.round(Math.random()*255);
@@ -155,6 +155,31 @@
         while (shapes.length<config.amountOnSpawn){
           shapes.push(new Shape());
         }
+        window.addEventListener('touchmove',function(e){
+          e.preventDefault();
+          for (var i = e.changedTouches.length - 1; i >= 0; i--) {
+            shapes.push(new Shape(ShapeTypes.randomShape(), e.changedTouches[i].pageX, e.changedTouches[i].pageY));
+          };
+        });
+        window.addEventListener('touchstart',function(e){
+          e.preventDefault();
+          for (var i = e.changedTouches.length - 1; i >= 0; i--) {
+            shapes.push(new Shape(ShapeTypes.randomShape(), e.changedTouches[i].pageX, e.changedTouches[i].pageY));
+          };
+        });
+        window.addEventListener('mousedown',function(e){
+          e.preventDefault();
+          md=true;
+          shapes.push(new Shape(ShapeTypes.randomShape(), e.pageX, e.pageY));
+        });
+        window.addEventListener('mousemove',function(e){
+          e.preventDefault();
+          if(md) shapes.push(new Shape(ShapeTypes.randomShape(), e.pageX, e.pageY));
+        });
+        window.addEventListener('mouseup',function(e){
+          e.preventDefault();
+          md=!true;
+        });
         Draw();
       };
     </script>
